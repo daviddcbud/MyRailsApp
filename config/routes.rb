@@ -1,5 +1,5 @@
 MyRailsApp::Application.routes.draw do
-  
+  root :to => 'info_pages#home'
   match '/home', to: 'info_pages#home'
   match '/help', to: 'info_pages#help'
   match '/contact', to: 'info_pages#contact'

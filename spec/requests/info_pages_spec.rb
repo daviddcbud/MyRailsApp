@@ -14,6 +14,29 @@ describe "InfoPages" do
     end
   end
   
+  describe "Root Page" do
+    subject { page }
+    before { visit root_path }
+    it "should have correct title" do
+          page.should have_selector('title',
+                                  :text => "#{base_title} | Home") 
+    end
+    
+    it "should have about link" do
+       click_link "Contact" 
+       page.should have_selector('title',
+                                  :text => "#{base_title} | Contact") 
+    end
+    
+    it "should have help link" do
+       click_link "Help" 
+       page.should have_selector('title',
+                                  :text => "#{base_title} | Help") 
+    end
+  end
+  
+  
+  
   describe "Help Page" do
     subject { page }
     before { visit help_path }
